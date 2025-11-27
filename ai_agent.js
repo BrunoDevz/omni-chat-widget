@@ -606,24 +606,24 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
-                Start chatting
+                Börja chatta
             </button>
             <p class="chat-response-time">${settings.branding.responseTimeText}</p>
         </div>
         <div class="user-registration">
-            <h2 class="registration-title">Please enter your details to start chatting</h2>
+            <h2 class="registration-title">Ange dina uppgifter för att börja chatta</h2>
             <form class="registration-form">
                 <div class="form-field">
-                    <label class="form-label" for="chat-user-name">Name</label>
-                    <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
+                    <label class="form-label" for="chat-user-name">Namn</label>
+                    <input type="text" id="chat-user-name" class="form-input" placeholder="Ditt namn" required>
                     <div class="error-text" id="name-error"></div>
                 </div>
                 <div class="form-field">
-                    <label class="form-label" for="chat-user-email">Email</label>
-                    <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
+                    <label class="form-label" for="chat-user-email">Mail</label>
+                    <input type="email" id="chat-user-email" class="form-input" placeholder="Din mail" required>
                     <div class="error-text" id="email-error"></div>
                 </div>
-                <button type="submit" class="submit-registration">Continue to Chat</button>
+                <button type="submit" class="submit-registration">Fortsätt</button>
             </form>
         </div>
     `;
@@ -633,7 +633,7 @@
         <div class="chat-body">
             <div class="chat-messages"></div>
             <div class="chat-controls">
-                <textarea class="chat-textarea" placeholder="Type your message here..." rows="1"></textarea>
+                <textarea class="chat-textarea" placeholder="Skriv ditt meddelande här..." rows="1"></textarea>
                 <button class="chat-submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 2L11 13"></path>
@@ -656,7 +656,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
         </svg>
-        <span class="chat-launcher-text">Need help?</span>`;
+        <span class="chat-launcher-text">Har du frågor?</span>`;
     
     // Add elements to DOM
     widgetRoot.appendChild(chatWindow);
@@ -737,17 +737,17 @@
         let isValid = true;
         
         if (!name) {
-            nameError.textContent = 'Please enter your name';
+            nameError.textContent = 'Vänlig ange ditt namn';
             nameInput.classList.add('error');
             isValid = false;
         }
         
         if (!email) {
-            emailError.textContent = 'Please enter your email';
+            emailError.textContent = 'Vänlig ange ditt mail';
             emailInput.classList.add('error');
             isValid = false;
         } else if (!isValidEmail(email)) {
-            emailError.textContent = 'Please enter a valid email address';
+            emailError.textContent = 'Ange en giltig e-postadress';
             emailInput.classList.add('error');
             isValid = false;
         }
@@ -860,7 +860,7 @@
             // Show error message
             const errorMessage = document.createElement('div');
             errorMessage.className = 'chat-bubble bot-bubble';
-            errorMessage.textContent = "Sorry, I couldn't connect to the server. Please try again later.";
+            errorMessage.textContent = "Tyvärr, jag kunde inte ansluta till servern. Försök igen senare.";
             messagesContainer.appendChild(errorMessage);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
@@ -928,7 +928,7 @@
             // Show error message
             const errorMessage = document.createElement('div');
             errorMessage.className = 'chat-bubble bot-bubble';
-            errorMessage.textContent = "Sorry, I couldn't send your message. Please try again.";
+            errorMessage.textContent = "Tyvärr, jag kunde inte skicka ditt meddelande. Försök igen.";
             messagesContainer.appendChild(errorMessage);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         } finally {
@@ -981,3 +981,4 @@
         });
     });
 })();
+
